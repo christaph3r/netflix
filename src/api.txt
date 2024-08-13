@@ -1,0 +1,76 @@
+  const API_KEY="47de2b9e8b2462b53975d18185ac40bf";
+
+const requests = {
+    fetchTrending:`/trending/all/week?api_key=${APIKEY}&language=en-US`,
+    fetchNetflixOriginals:`/discover/tv?api_key=${APIKEY}&with_networks=213`,
+    fetchTopRated:`/movie/top_rated?api_key=${APIKEY}&language=en-US`,
+    fetchActionMovies:`/discover/movie?api_key=${APIKEY}&with_genres=28`,
+    fetchComedyMovies:`/discover/movie?api_key=${APIKEY}&with_genres=35`,
+    fetchHorrorMovies:`/discover/movie?api_key=${APIKEY}&with_genres=27`,
+    fetchRomanceMovies:`/discover/movie?api_key=${APIKEY}&with_genres=10749`,
+    fetchDocumentaries:`/discover/movie?api_key=${APIKEY}&with_genres=99`,
+}
+  //to get movie details based on category
+  //eg:  https://api.themoviedb.org/3/trending/all/week?api_key=47de2b9e8b2462b53975d18185ac40bf&language=en-US
+  
+    
+  baseURL: "https://api.themoviedb.org/3",
+  const base_url = "https://image.tmdb.org/t/p/original";
+
+//https://image.tmdb.org/t/p/original/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg
+
+
+
+
+
+Notes:
+=====
+
+making calls from react app
+===========================
+axios: is a javascript package that can be used to make API calls from react 
+       component
+     1) install axios using 
+           npm install axios commant in cmd  
+
+     2)  import axios using axios
+     3) get method using axios
+     4) post method using axios
+     5) for making api calls, first we have to create an instance of axios
+     6) using a single instance,we can make multiple api requests
+
+         const instance = axios.create({
+          base_url:'------',
+          timeout :1000,
+          headers :{'----'}  (optional)
+         });     
+
+
+
+ useEffect()
+ ===========
+      this is one of the most commenly used hook in react js
+      -it is used to handle side Effect
+      -some example of side effect are fetching data,directly updating the dom and timers
+      -useEffect hook accept 2 arguments
+      -useEffect(<function>,<dependency>)
+      -second argument optional 
+      -useEffect hook is used to fetch data after the component is mounted
+
+
+      in 3 situation it can be used:
+      1) no dependency is passed:useEffect runs on every render
+      syntax
+      ------
+      useEffect(()=>{
+        //runs on ever render
+      });
+
+      2) an empty array : is passed as dependency useEffect run in first render
+      syntax
+      ------
+      useEffect(()=>{
+        //runs on first render
+      },[]);
+
+      3) 
